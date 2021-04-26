@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    .box {
+       background-color: black;
+    }
+    small{
+        word-break: break-all;
+        color: rgb(163, 104, 219);
+    }
+    
+</style>
+
+<h1 class="title">
+  Token
+</h1>
+<div class="container">
+    <div class="column is-half is-offset-one-quarter">
+<div class="box" style="color:rgb(20, 20, 20);">
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <p>
+                <strong style="color: rgb(138, 196, 141);">Token:</strong> <small>{{ token }}</small>
+                <br>
+                <br>
+                <strong style="color: rgb(138, 196, 141);">Refresh:</strong> <small>{{ refresh }}</small>
+                <br>
+                <br>
+                <strong style="color: rgb(138, 196, 141);">Expires In:</strong> <small>{{ expires }}</small>
+                </p>
+            </div>
+        </div>
+    </article>
+</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h3 class="subtitle">
+    Imput your host api-auth or imput default value.
+    http://localhost:6000
+    </h3>
+
+    <div class="column is-4 is-offset-4">
+        
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                
+                <section class="section">
+                    <div class="field">
+                        {% if form.hostname.errors %}
+                        {{ form.hostname(class="input is-info is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hostname.errors %}
+                            <p class="help is-danger">
+                                <span>{{ error }}</span>
+                            </p>
+                            </p>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.hostname(class="input is-info", type="text", placeholder="http://localhost:6000") }}
+                        {% endif %}
+                    </div>
+
+                    <div class="field">
+                        <p class="control">
+                            {{ form.submit(class="button is-dark") }}
+                        </p>
+                    </div>
+               
+                </section>
+                
+            </form>
+       
+    </div>
+{% endblock %}
