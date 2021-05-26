@@ -12,9 +12,9 @@ def num_host():
     host = Host.query.all()
     num = len(host)
     if num == 1:
-        print("1")
+        
         return False
-    print("nao e 1")
+    
     return True
 
 
@@ -33,4 +33,5 @@ def get_host():
 
 def host():
     host = Host.query.filter_by(id=1).first()
+    print(host)
     return host
